@@ -7,7 +7,7 @@ using WordUnscrambler.Data;
 
 namespace WordUnscrambler.Workers
 {
-    class WordMatcher
+    public class WordMatcher
     {
         public List<MatchedWord> Match(string[] scrambledWords, string[] wordList)
         {
@@ -23,8 +23,8 @@ namespace WordUnscrambler.Workers
                     }
                     else
                     {
-                        var scrambledWordArray = scrambledWord.ToCharArray();
-                        var wordArray = word.ToCharArray();
+                        var scrambledWordArray = scrambledWord.ToUpper().ToCharArray();
+                        var wordArray = word.ToUpper().ToCharArray();
 
                         Array.Sort(scrambledWordArray);
                         Array.Sort(wordArray);
